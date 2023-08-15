@@ -1,0 +1,191 @@
+/**
+ *
+ * Apply Here your Custom CSS
+ *
+*/
+
+body {
+
+}
+.bs-wizard {margin-top: 40px;}
+
+/*Form Wizard*/
+.bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
+.bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
+.bs-wizard > .bs-wizard-step + .bs-wizard-step {}
+.bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: #595959; font-size: 16px; margin-bottom: 5px;}
+.bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #d6d6d4; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #929292; border-radius: 50px; position: absolute; top: 8px; left: 8px; }
+.bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #e9e9e9;}
+.bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
+.bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {width:50%;}
+.bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {width:0%;}
+.bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {width: 100%;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: #f5f5f5;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {opacity: 0;}
+.bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
+.bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
+.bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
+/*END Form Wizard*/
+
+.clientService{
+    width: 100%;
+    padding: 4px;
+    border-color: #EBEBEB;
+    border-radius: 3px;
+}
+.clientService:hover{
+    color: #7F7F7F;
+}
+.clientService>option{
+    color:#7F7F7F !important ;
+    padding: 5px;
+    border-radius: 3px;
+}
+.clientService>option::after{
+    content:'';
+    clear:both;
+    border-radius: 3px;
+}
+.select-items {
+    position: absolute;
+    background-color: rgb(211, 211, 211);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+.clientService {
+
+  }
+ .clientService {
+
+  }
+ .clientService.visible {
+
+  }
+ .clientService-container {
+ 
+  }
+ .clientService-container .clientService {
+    width: 100% !important;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    -moz-transition: all 150ms ease-in-out;
+    -webkit-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+ .clientService-container .clientService.clientService-enabled:focus {
+    background-color: #fff;
+  }
+ .clientService-container .clientService.clientService-enabled:focus .clientService-text {
+    color: #303641;
+  }
+ .clientService-container .clientService:hover,
+ .clientService-container .clientService.clientService-open {
+    background-color: rgba(245, 245, 246, 0.8);
+  }
+ .clientService-container .clientService:hover .clientService-text,
+ .clientService-container .clientService.clientService-open .clientService-text {
+    color: #303641;
+  }
+ .clientService-container .clientService.clientService-open {
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+  }
+ .clientService-container .clientService.clientService-open .clientService-arrow-container {
+    background-color: rgba(245, 245, 246, 0.8);
+  }
+ .clientService-container .clientService.clientService-open .clientService-arrow-container:after {
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+ .clientService-container .clientService .clientService-option-icon-container .clientService-option-icon {
+    margin-left: 5px;
+  }
+ .clientService-container .clientService .clientService-text {
+    max-width: 100% !important;
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, "Noto Sans", sans-serif;
+    color: #888;
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+ .clientService-container .clientService .clientService-arrow-container {
+    border-left: 1px solid #ebebeb;
+    text-align: center;
+    width: 40px;
+  }
+ .clientService-container .clientService .clientService-arrow-container .clientService-arrow {
+    display: none;
+  }
+ .clientService-container .clientService .clientService-arrow-container:after {
+    position: relative;
+    font-family: "Entypo";
+    content: '\e873';
+    display: block;
+    color: #303641;
+    -moz-transition: all 150ms ease-in-out;
+    -webkit-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    font-size: 12px;
+  }
+ .clientService-container .clientService-options {
+    width: 100%;
+    background: #fff;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+    border-top: 0;
+    border-color: #ebebeb;
+    -moz-box-shadow: 0 2px 7px rgba(0,0,0,.06);
+    -webkit-box-shadow: 0 2px 7px rgba(0,0,0,.06);
+    box-shadow: 0 2px 7px rgba(0,0,0,.06);
+    max-height: 350px;
+  }
+ .clientService-container .clientService-options > span.clientService-optgroup-header {
+    font-size: 12px;
+    color: #303641;
+    background: #fafafa;
+    border-bottom: 1px solid #f5f5f5;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+ .clientService-container .clientService-options li .clientService-option-anchor {
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+ .clientService-container .clientService-options li .clientService-option-anchor .clientService-option-icon-container .clientService-option-icon {
+    margin-left: 5px;
+  }
+ .clientService-container .clientService-options li.clientService-focus .clientService-option-anchor {
+    background: #f3f3f3;
+    color: #666;
+  }

@@ -1,0 +1,35 @@
+# This is a sample build configuration for Other.
+# Check our guides at https://confluence.atlassian.com/x/5Q4SMw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+
+# Source: https://community.atlassian.com/t5/Bitbucket-questions/Using-Pipelines-with-git-ftp-efficently/qaq-p/820555
+image: wagnerstephan/bitbucket-git-ftp:latest
+
+pipelines:
+  custom: # matched against branches in your Git repository
+    deployment-to-production: # custom pipleline for push to production server 
+      - step:
+          name: Get deploy sync list # files in .git-ftp-ignore should not be listed
+          script:
+#           - git ftp init --user $FTP_USERNAME_PRODUCTION --passwd $FTP_PASSWORD_PRODUCTION ftp://$FTP_HOST_PRODUCTION # comment this after first run
+#           - git ftp catchup --user $FTP_USERNAME_PRODUCTION --passwd $FTP_PASSWORD_PRODUCTION ftp://$FTP_HOST_PRODUCTION # comment this after first run
+           - git ftp push --dry-run --user $FTP_USERNAME_PRODUCTION --passwd $FTP_PASSWORD_PRODUCTION ftp://$FTP_HOST_PRODUCTION # dry run so nothing is uploaded
+      - step:
+          name: Manually deploy to production server
+          deployment: production
+          script:
+            - git ftp push --user $FTP_USERNAME_PRODUCTION --passwd $FTP_PASSWORD_PRODUCTION ftp://$FTP_HOST_PRODUCTION
+  branches: # matched against branches in your Git repository
+    # master: # automatical pipeline for pushing master to release server 
+    custom: # changed to custom on 2021-06-15 after dropping release server
+    - step:
+        name: Get deploy sync list # files in .git-ftp-ignore should not be listed
+        script:
+          - git ftp push --dry-run --user $FTP_USERNAME_RELEASE --passwd $FTP_PASSWORD_RELEASE ftp://$FTP_HOST_RELEASE # dry run so nothing is uploaded
+    - step:
+        name: Automatically deploy to release server
+        deployment: staging
+        script:
+          - git ftp push --user $FTP_USERNAME_RELEASE --passwd $FTP_PASSWORD_RELEASE ftp://$FTP_HOST_RELEASE
